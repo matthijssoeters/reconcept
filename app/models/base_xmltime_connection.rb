@@ -10,7 +10,7 @@ class BaseXmltimeConnection
     return JSON.parse(response.body)
   end
 
-  private
+  protected
   def setup_connection_args
     timestamp = Time.now.getutc.strftime('%FT%T')
     return { accesskey: Rails.application.credentials.xmltime[:accesskey],
@@ -37,9 +37,5 @@ class BaseXmltimeConnection
 
   def query args
     return args.collect{|key, value| [key.to_s, CGI::escape(value.to_s)].join('=')}.join(';')
-  end
-
-  def timetest
-    Time.now.getutc.strftime('%FT%T')
   end
 end
