@@ -69,7 +69,7 @@ set :linked_dirs, %w(log tmp/cache)
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
-set :ssh_options,             forward_agent: true, user: fetch(:user), keys: ['~/.ssh/id_rsa.pub'], port: "2468"
+set :ssh_options,             forward_agent: true, user: fetch(:user), keys: ['~/.ssh/id_rsa.pub']
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
