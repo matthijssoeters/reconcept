@@ -27,4 +27,12 @@ RSpec.describe BaseXmltimeConnection, type: :model do
   describe 'service_name' do
     it { expect { base_xmltime_connection.send(:service_name) }.to raise_error(NotImplementedError) }
   end
+
+  describe 'access_key' do
+    it { expect(base_xmltime_connection.send(:access_key)).to eq "test_access_key" }
+  end
+
+  describe 'secret_key' do
+    it { expect(base_xmltime_connection.send(:secret_key)).to eq "test_secret_key" }
+  end
 end
