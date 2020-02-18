@@ -30,7 +30,7 @@ class AstronomyXmltimeConnection < BaseXmltimeConnection
   end
 
   def parse_moon_phase res
-    res["locations"].first["geo"].merge(res["locations"].first["astronomy"]["objects"].first["days"].first.except("events"))
+    (res["locations"].first["geo"].merge(res["locations"].first["astronomy"]["objects"].first["days"].first.except("events"))).to_json
   end
 
   def parse_errors res

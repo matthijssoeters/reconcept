@@ -7,13 +7,13 @@ RSpec.describe AstronomyXmltimeConnection, type: :model do
   describe 'moon_phase' do
     it '2020-02-01' do
       VCR.use_cassette("moon_phase_01-02-2020", :match_requests_on => [:method, :host, :headers]) do
-        expect(astronomy_xmltime_connection.moon_phase("2020-02-01")).to eq({"name"=>"Amsterdam", "country"=>{"id"=>"nl", "name"=>"Netherlands"}, "latitude"=>52.373, "longitude"=>4.894, "date"=>"2020-02-01", "moonphase"=>"waxingcrescent"})
+        expect(astronomy_xmltime_connection.moon_phase("2020-02-01")).to eq "{\"name\":\"Amsterdam\",\"country\":{\"id\":\"nl\",\"name\":\"Netherlands\"},\"latitude\":52.373,\"longitude\":4.894,\"date\":\"2020-02-01\",\"moonphase\":\"waxingcrescent\"}"
       end
     end
 
     it '2020-02-17' do
       VCR.use_cassette("moon_phase_17-02-2020", :match_requests_on => [:method, :host, :headers]) do
-        expect(astronomy_xmltime_connection.moon_phase("2020-02-17")).to eq({"name"=>"Amsterdam", "country"=>{"id"=>"nl", "name"=>"Netherlands"}, "latitude"=>52.373, "longitude"=>4.894, "date"=>"2020-02-17", "moonphase"=>"waningcrescent"})
+        expect(astronomy_xmltime_connection.moon_phase("2020-02-17")).to eq "{\"name\":\"Amsterdam\",\"country\":{\"id\":\"nl\",\"name\":\"Netherlands\"},\"latitude\":52.373,\"longitude\":4.894,\"date\":\"2020-02-17\",\"moonphase\":\"waningcrescent\"}"
       end
     end
 
