@@ -1,10 +1,12 @@
-%h3= t(".lunar_phase")
-.intro= t(".page_intro")
-.form#as_json
-  %h6= t(".show_lunar_phase_as_json")
-  = render partial: "form", locals: {path_attr: "json", local: true}
-.form#on_page
-  %h6= t(".show_lunar_phase_on_page")
-  = render partial: "form", locals: {path_attr: "", local: false}
-.results#lunar_phase_results
-  = render partial: "lunar_phase"
+.row
+  .col-12
+    %h3= t(".lunar_phase")
+    .intro= t(".page_intro")
+    .form#as_json
+      %h6= t(".show_lunar_phase_as_json")
+      = render partial: "form", locals: {path_attr: "json", local: true}
+    .form#on_page
+      %h6= t(".show_lunar_phase_on_page")
+      = render partial: "form", locals: {path_attr: "", local: false}
+    .results#lunar_phase_results
+      = render partial: "lunar_phase"
