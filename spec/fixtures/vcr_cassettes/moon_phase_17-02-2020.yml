@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.xmltime.com/astronomy?accesskey=<access_key>%3Btimestamp=2020-02-17T22:51:57%3Bsignature=yjVxILryGpn5DfEPtu6LMHpsMpI=%3Bversion=3%3Bout=js%3Bobject=moon%3Bplaceid=16%3Bstartdt=2020-02-17%3Btypes=phase
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.72.0
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 17 Feb 2020 22:51:57 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '301'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":3,"billing":{"credits":1},"locations":[{"id":"16","geo":{"name":"Amsterdam","country":{"id":"nl","name":"Netherlands"},"latitude":52.373,"longitude":4.894},"matchparam":"16","astronomy":{"objects":[{"name":"moon","days":[{"date":"2020-02-17","events":[],"moonphase":"waningcrescent"}]}]}}]}'
+    http_version: null
+  recorded_at: Mon, 17 Feb 2020 22:51:57 GMT
+recorded_with: VCR 5.1.0
