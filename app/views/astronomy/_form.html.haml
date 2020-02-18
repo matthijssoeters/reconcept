@@ -1,0 +1,4 @@
+= form_with(url: lunar_phase_path(path_attr), method: "post", local: local) do
+  %span.moon_phase_label= t(".select_date", default: "Select date")
+  %span.moon_phase_field= date_field_tag(:date)
+  .moon_phase_button= button_tag(t(".get_lunar_phase"), type: "submit", remote: true, class: "btn btn-light")

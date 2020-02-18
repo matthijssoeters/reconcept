@@ -30,4 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  astronomy:
+    form:
+      get_lunar_phase: "Get lunar phase"
+    index:
+      lunar_phase: "Lunar phase"
+      page_intro: "This page will return the lunar phase (or phase of the moon) of the selected date. This can be in json or as a json rendered on this page."
+      select_date: "Select date"
+      show_lunar_phase_as_json: "Show lunar phase in JSON"
+      show_lunar_phase_on_page: "Show lunar phase as JSON on the page"
+  layouts:
+    application:
+      app_title: "Reconcept Astronomy"
+

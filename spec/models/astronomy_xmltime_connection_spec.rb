@@ -2,28 +2,28 @@ require 'rails_helper'
 
 RSpec.describe AstronomyXmltimeConnection, type: :model do
 
-  describe 'moon_phase' do
+  describe 'lunar_phase' do
     it '2020-02-01' do
-      VCR.use_cassette("moon_phase_01-02-2020", :match_requests_on => [:method, :host, :headers]) do
-        expect(AstronomyXmltimeConnection.moon_phase("2020-02-01")).to eq "{\"name\":\"Amsterdam\",\"country\":{\"id\":\"nl\",\"name\":\"Netherlands\"},\"latitude\":52.373,\"longitude\":4.894,\"date\":\"2020-02-01\",\"moonphase\":\"waxingcrescent\"}"
+      VCR.use_cassette("lunar_phase_01-02-2020", :match_requests_on => [:method, :host, :headers]) do
+        expect(AstronomyXmltimeConnection.lunar_phase("2020-02-01")).to eq "{\"name\":\"Amsterdam\",\"country\":{\"id\":\"nl\",\"name\":\"Netherlands\"},\"latitude\":52.373,\"longitude\":4.894,\"date\":\"2020-02-01\",\"moonphase\":\"waxingcrescent\"}"
       end
     end
 
     it '2020-02-17' do
-      VCR.use_cassette("moon_phase_17-02-2020", :match_requests_on => [:method, :host, :headers]) do
-        expect(AstronomyXmltimeConnection.moon_phase("2020-02-17")).to eq "{\"name\":\"Amsterdam\",\"country\":{\"id\":\"nl\",\"name\":\"Netherlands\"},\"latitude\":52.373,\"longitude\":4.894,\"date\":\"2020-02-17\",\"moonphase\":\"waningcrescent\"}"
+      VCR.use_cassette("lunar_phase_17-02-2020", :match_requests_on => [:method, :host, :headers]) do
+        expect(AstronomyXmltimeConnection.lunar_phase("2020-02-17")).to eq "{\"name\":\"Amsterdam\",\"country\":{\"id\":\"nl\",\"name\":\"Netherlands\"},\"latitude\":52.373,\"longitude\":4.894,\"date\":\"2020-02-17\",\"moonphase\":\"waningcrescent\"}"
       end
     end
 
     it 'expired' do
-      VCR.use_cassette("moon_phase_expired", :match_requests_on => [:method, :host, :headers]) do
-        expect(AstronomyXmltimeConnection.moon_phase("2020-02-17")["errors"]).to eq ["Request expired."]
+      VCR.use_cassette("lunar_phase_expired", :match_requests_on => [:method, :host, :headers]) do
+        expect(AstronomyXmltimeConnection.lunar_phase("2020-02-17")["errors"]).to eq ["Request expired."]
       end
     end
 
     it 'wrong date' do
-      expect(AstronomyXmltimeConnection.moon_phase("20-12-2020")).to eq({errors: "Invalid date."})
-      expect(AstronomyXmltimeConnection.moon_phase("2020-02-31")).to eq({errors: "Invalid date."})
+      expect(AstronomyXmltimeConnection.lunar_phase("20-12-2020")).to eq({errors: "Invalid date."})
+      expect(AstronomyXmltimeConnection.lunar_phase("2020-02-31")).to eq({errors: "Invalid date."})
     end
   end
 

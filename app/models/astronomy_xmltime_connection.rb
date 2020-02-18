@@ -1,7 +1,7 @@
 class AstronomyXmltimeConnection < BaseXmltimeConnection
   SERVICE = "astronomy"
 
-  def self.moon_phase date
+  def self.lunar_phase date
     if validate_date date
       res = request_api( {object: 'moon', placeid: 16, startdt: date, types: "phase"} )
       res.keys.include?("errors") ? parse_errors(res) : parse_moon_phase(res)

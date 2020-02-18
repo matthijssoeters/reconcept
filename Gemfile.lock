@@ -116,6 +116,8 @@ GEM
     ffaker (2.13.0)
     ffi (1.12.2)
     formatador (0.2.5)
+    geckodriver-helper (0.24.0)
+      archive-zip (~> 0.7)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     guard (2.16.1)
@@ -337,6 +339,7 @@ DEPENDENCIES
   factory_bot
   faker
   ffaker
+  geckodriver-helper
   guard-rspec
   haml-rails (~> 1.0)
   jbuilder (~> 2.5)
